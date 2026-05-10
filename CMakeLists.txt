@@ -57,7 +57,7 @@ target_compile_definitions(gfx2agb PRIVATE GFX2AGB_VERSION_MAJOR=${PROJECT_VERSI
 
 if(MSVC)
     set_source_files_properties(source/util.cpp PROPERTIES COMPILE_OPTIONS "/bigobj")
-else()
+elseif(WIN32)
     set_source_files_properties(source/util.cpp PROPERTIES COMPILE_OPTIONS "-Wa,-mbig-obj")
 endif()
 
